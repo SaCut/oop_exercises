@@ -1,6 +1,6 @@
 # OOP Exercises
 
-#### FizzBuzz class
+### FizzBuzz class
 - First we define the class
 ```python
 class FizzBuzz():
@@ -45,7 +45,7 @@ if __name__=='__main__': # only execute the following code if this file is run d
 	fizzbuzz.fizz_buzz() # call method
 ```
 
-#### Scrabble calculator
+### Scrabble calculator
 - We define the class
 ```python
 class ScrabbleCalc():
@@ -76,7 +76,7 @@ class ScrabbleCalc():
 ```
 - then we return the total score
 ```python
-		return total # then we return the total
+		return total
 ```
 - finally, we create an object for the class and execute the method, passing a string to be checked
 ```python
