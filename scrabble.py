@@ -1,19 +1,9 @@
-# Base Scrabble word calculator instructions
-# Given the below scoring create a Scrabble word calculator that will
-# provide the correct scores dependent on the string provided.
-
-# Letter Value
-# A, E, I, O, U, L, N, R, S, T 1
-# D, G 2
-# B, C, M, P 3
-# F, H, V, W, Y 4
-# K 5
-# J, X 8
-
+# Base Scrabble word calculator
 class ScrabbleCalc():
 
-	def __init__(self, word=""):
-		self.word = word
+	def __init__(self):
+
+		# we create a dictionary of points and letters
 		self.groups = {
 			1: ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"],
 			2: ["D", "G"],
@@ -23,4 +13,18 @@ class ScrabbleCalc():
 			8: ["J", "X"]
 			}
 
-	def result(self, word)
+	# we define a method for calculating the result
+	def result(self, word=""): # taking use input
+
+		total = 0 # starting with zero points
+
+		for letter in word: # we check each letter
+			for points, group in self.groups.items(): # we iterate over the dictionary
+				if letter.upper() in group: 	# if the (upper-case) letter is found in the group
+					total += points				# we add its worth to the total
+
+		return total # then we return the total
+
+if __name__=='__main__':
+	calculator = ScrabbleCalc() # we assign the class to an object
+	print(calculator.result("this_should_be_worth_32")) # then we check it the method works

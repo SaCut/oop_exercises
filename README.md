@@ -44,3 +44,43 @@ if __name__=='__main__': # only execute the following code if this file is run d
 
 	fizzbuzz.fizz_buzz() # call method
 ```
+
+#### Scrabble calculator
+- We define the class
+```python
+class ScrabbleCalc():
+```
+- in the init method, we create a dictionary of points and letters
+```python
+	def __init__(self):
+		self.groups = {
+			1: ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"],
+			2: ["D", "G"],
+			3: ["B", "C", "M", "P"],
+			4: ["F", "H", "V", "W", "Y"],
+			5: ["K"],
+			8: ["J", "X"]
+			}
+```
+
+- we define a method for calculating the result
+```python
+	def result(self, word=""): # taking use input
+
+		total = 0 # starting with zero points
+
+		for letter in word: # we check each letter
+			for points, group in self.groups.items(): # we iterate over the dictionary
+				if letter.upper() in group: 	# if the (upper-case) letter is found in the group
+					total += points				# we add its worth to the total
+```
+- then we return the total score
+```python
+		return total # then we return the total
+```
+- finally, we create an object for the class and execute the method, passing a string to be checked
+```python
+if __name__=='__main__':
+	calculator = ScrabbleCalc() # we assign the class to an object
+	print(calculator.result("this_should_be_worth_32")) # then we check it the method works
+```
